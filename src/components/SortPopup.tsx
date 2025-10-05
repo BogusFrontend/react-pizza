@@ -30,7 +30,7 @@ const SortPopup = ({ sortItems }) => {
     <div ref={sortRef} className='sort'>
       <div className='sort__label'>
         <svg
-          className={isVisiblePopup && 'rotated'}
+          className={isVisiblePopup ? 'rotated' : ''}
           width='10'
           height='6'
           viewBox='0 0 10 6'
@@ -49,7 +49,7 @@ const SortPopup = ({ sortItems }) => {
         <div className='sort__popup'>
           <ul>
             {sortItems.map((item, index) => (
-              <li onClick={() => chooseCategory(index)} className={activeItem === index && 'active'} key={index}>
+              <li onClick={() => chooseCategory(index)} className={activeItem === index ? 'active' : ''} key={index}>
                 {item}
               </li>
             ))}
